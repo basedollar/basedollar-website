@@ -39,7 +39,7 @@ const HowItWorks: React.FC = () => {
         {/* Section heading */}
         <h2
           style={{
-            fontFamily: 'DM Serif Display, serif',
+            fontFamily: "'Inter', sans-serif",
             fontSize: '3rem',
             color: '#56232f',
             textAlign: 'center',
@@ -125,7 +125,7 @@ const HowItWorks: React.FC = () => {
                 {/* Step title */}
                 <h3
                   style={{
-                    fontFamily: 'DM Serif Display, serif',
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: '1.35rem',
                     color: '#56232f',
                     margin: '0 0 10px 0',

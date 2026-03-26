@@ -11,7 +11,7 @@ const Features: React.FC = () => {
   };
 
   const headingStyle: React.CSSProperties = {
-    fontFamily: "'DM Serif Display', serif",
+    fontFamily: "'Inter', sans-serif",
     color: '#56232f',
     fontSize: '2.2rem',
     margin: '0 0 12px 0',

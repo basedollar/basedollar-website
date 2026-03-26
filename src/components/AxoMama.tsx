@@ -24,7 +24,7 @@ const AxoMama: React.FC = () => {
         <div style={{ flex: '1 1 480px', minWidth: 280 }}>
           <h2
             style={{
-              fontFamily: "'DM Serif Display', serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               color: '#4a1c28',
               margin: '0 0 24px 0',
