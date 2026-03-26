@@ -47,16 +47,8 @@ const Navbar: React.FC = () => {
           flex-shrink: 0;
         }
         .navbar-logo {
-          width: 40px;
-          height: 40px;
+          height: 36px;
           object-fit: contain;
-        }
-        .navbar-title {
-          font-size: 20px;
-          font-weight: 700;
-          color: #f5d57d;
-          letter-spacing: 0.5px;
-          white-space: nowrap;
         }
         .navbar-links {
           display: flex;
@@ -195,8 +187,7 @@ const Navbar: React.FC = () => {
 
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         <a href="#" className="navbar-brand">
-          <img src="/images/logo.png" alt="Base Dollar Logo" className="navbar-logo" />
-          <span className="navbar-title">Base Dollar</span>
+          <img src="/images/logo.png" alt="Base Dollar" className="navbar-logo" />
         </a>
 
         <ul className="navbar-links">

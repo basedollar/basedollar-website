@@ -10,5 +10,6 @@ export default defineConfig({
   preview: {
     port: 8000,
     host: '0.0.0.0',
+    allowedHosts: true,
   },
 })

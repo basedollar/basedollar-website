@@ -11,9 +11,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <BorderStrip />
       <Hero />
-      <BorderStrip />
       <Features />
       <HowItWorks />
       <Lore />

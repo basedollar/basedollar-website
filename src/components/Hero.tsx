@@ -1,26 +1,63 @@
 import React from 'react';
 
+const HeroBorderStrip = () => (
+  <div
+    style={{
+      width: '100%',
+      height: 33,
+      backgroundImage: 'url(/images/border-pattern.png)',
+      backgroundRepeat: 'repeat',
+      backgroundSize: '45px',
+      backgroundColor: '#56232f',
+      position: 'relative',
+      zIndex: 2,
+    }}
+  />
+);
+
 const Hero: React.FC = () => {
   return (
-    <section style={{ width: '100%' }}>
-      {/* Hero Banner Image */}
+    <section style={{ width: '100%', paddingTop: 72 }}>
+      {/* Hero Image Area with border strips and overlay */}
       <div
         style={{
+          position: 'relative',
           width: '100%',
           overflow: 'hidden',
-          lineHeight: 0,
         }}
       >
+        {/* Top border strip */}
+        <HeroBorderStrip />
+
+        {/* Hero Banner Image */}
         <img
           src="/images/hero-banner.png"
           alt="Base Dollar - Inca-themed landscape"
           style={{
             width: '100%',
-            height: 'auto',
             display: 'block',
             objectFit: 'cover',
           }}
         />
+
+        {/* People overlay in bottom-left */}
+        <img
+          src="/images/hero-element.png"
+          alt="Explorers"
+          style={{
+            position: 'absolute',
+            bottom: 33,
+            left: 48,
+            width: 414,
+            height: 'auto',
+            objectFit: 'cover',
+            zIndex: 1,
+            pointerEvents: 'none',
+          }}
+        />
+
+        {/* Bottom border strip */}
+        <HeroBorderStrip />
       </div>
 
       {/* Dark Brown Content Section */}
@@ -81,16 +118,6 @@ const Hero: React.FC = () => {
               transition: 'transform 0.2s ease, box-shadow 0.2s ease',
               boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
               letterSpacing: '0.5px',
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)';
-              (e.currentTarget as HTMLElement).style.boxShadow =
-                '0 6px 24px rgba(0, 0, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
-              (e.currentTarget as HTMLElement).style.boxShadow =
-                '0 4px 16px rgba(0, 0, 0, 0.3)';
             }}
           >
             Deposit Now
