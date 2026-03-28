@@ -5,6 +5,8 @@ const HeroBorderStrip = () => (
     style={{
       width: '100%',
       height: 33,
+      minHeight: 33,
+      flexShrink: 0,
       backgroundImage: 'url(/images/border-pattern.png)',
       backgroundRepeat: 'repeat',
       backgroundSize: '45px',
@@ -17,59 +19,65 @@ const HeroBorderStrip = () => (
 
 const Hero: React.FC = () => {
   return (
-    <section style={{ width: '100%', paddingTop: 72 }}>
-      {/* Hero Image Area with border strips and overlay */}
+    <section style={{
+      width: '100%',
+      paddingTop: 72,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'stretch',
+      height: '100vh',
+      boxSizing: 'border-box',
+      overflow: 'hidden',
+    }}>
+      {/* Hero Image Area with border strips — fills remaining space */}
       <div
         style={{
           position: 'relative',
           width: '100%',
           overflow: 'hidden',
+          flex: '1 1 0%',
+          minHeight: 0,
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         {/* Top border strip */}
         <HeroBorderStrip />
 
-        {/* Hero Banner Image */}
-        <img
-          src="/images/hero-banner.png"
-          alt="Base Dollar - Inca-themed landscape"
-          style={{
-            width: '100%',
-            display: 'block',
-            objectFit: 'cover',
-          }}
-        />
-
-        {/* People overlay in bottom-left */}
-        <img
-          src="/images/hero-element.png"
-          alt="Explorers"
-          style={{
-            position: 'absolute',
-            bottom: 33,
-            left: 48,
-            width: 414,
-            height: 'auto',
-            objectFit: 'cover',
-            zIndex: 1,
-            pointerEvents: 'none',
-          }}
-        />
+        {/* Hero Banner Image — fills remaining space between strips */}
+        <div style={{
+          flex: '1 1 0%',
+          minHeight: 0,
+          overflow: 'hidden',
+        }}>
+          <img
+            src="/images/hero-banner-2.png"
+            alt="Base Dollar - Inca-themed landscape"
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block',
+              objectFit: 'cover',
+              objectPosition: 'center',
+            }}
+          />
+        </div>
 
         {/* Bottom border strip */}
         <HeroBorderStrip />
       </div>
 
-      {/* Dark Brown Content Section */}
+      {/* Dark Brown Content Section — never shrinks, always visible */}
       <div
         style={{
           backgroundColor: '#4a1c28',
-          padding: '60px 40px',
+          padding: '40px 40px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          gap: '40px',
+          gap: '24px',
+          flexShrink: 0,
         }}
       >
         {/* Left: Heading + Subtext */}
