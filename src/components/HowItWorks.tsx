@@ -27,7 +27,7 @@ const HowItWorks: React.FC = () => {
       id="how-it-works"
       style={{
         backgroundColor: '#f5d57d',
-        padding: '80px 20px',
+        padding: '60px 20px',
       }}
     >
       <div
