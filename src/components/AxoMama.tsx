@@ -25,13 +25,13 @@ const AxoMama: React.FC = () => {
           <h2
             style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              fontSize: 52,
               color: '#4a1c28',
               margin: '0 0 24px 0',
               lineHeight: 1.1,
             }}
           >
-            Axo Mama
+            Maximized AERO Synergy
           </h2>
           <p
             style={{
@@ -42,20 +42,29 @@ const AxoMama: React.FC = () => {
               maxWidth: 520,
             }}
           >
-            Goddess of potatoes in Quichua. She is the one who generously shares
-            precious <strong>BaseD</strong> with every holder.
+            BaseDollar was specifically designed to boost AERO and plug in to the Aerodrome liquidity flywheel.
           </p>
           <p
             style={{
               fontSize: 18,
               lineHeight: 1.7,
               color: '#4a1c28',
-              margin: '0 0 36px 0',
+              margin: '0 0 16px 0',
               maxWidth: 520,
             }}
           >
-            Yield is determined by the amount you deposit and the lock-in time
-            you choose.
+            Aerodrome LP token depositors get cheap leverage on their LP positions, earning the protocol AERO rewards. AERO rewards boost BaseDollar liquidity providers and users across the Base network, increasing yield for holders. Increased yield drives more demand for BaseDollar products and borrowers. Borrower fees, liquidation fees, and incentives go to BaseDollar holders via the Stability Pools.
+          </p>
+          <p
+            style={{
+              fontSize: 18,
+              lineHeight: 1.7,
+              color: '#4a1c28',
+              margin: '0 0 16px 0',
+              maxWidth: 520,
+            }}
+          >
+            AERO is essential every step of the way.
           </p>
           <button
             onMouseEnter={() => setButtonHovered(true)}

@@ -2,8 +2,8 @@ import React from 'react';
 
 const Features: React.FC = () => {
   const cardStyle: React.CSSProperties = {
-    background: '#f5e6c8',
-    borderRadius: '20px',
+    backgroundColor: '#fdf6e3',
+    borderRadius: '10px',
     border: '2px solid #56232f',
     overflow: 'hidden',
     display: 'flex',
@@ -29,7 +29,7 @@ const Features: React.FC = () => {
     background: '#56232f',
     color: '#f5e6c8',
     border: 'none',
-    borderRadius: '12px',
+    borderRadius: '8px',
     padding: '18px 24px',
     fontSize: '1.1rem',
     fontWeight: 600,
@@ -46,8 +46,17 @@ const Features: React.FC = () => {
     height: '100px',
     display: 'flex',
     alignItems: 'center',
-    borderBottom: '2px solid #56232f',
-    background: '#f0dbb8',
+    backgroundColor: '#fdf6e3',
+    position: 'relative' as const,
+  };
+
+  const marqueeOverlayStyle: React.CSSProperties = {
+    position: 'absolute',
+    inset: 0,
+    pointerEvents: 'none',
+    zIndex: 1,
+    background:
+      'linear-gradient(to right, #fdf6e3 0%, transparent 8%, transparent 92%, #fdf6e3 100%)',
   };
 
   const camelImages = Array.from({ length: 12 }, (_, i) =>
@@ -118,6 +127,7 @@ const Features: React.FC = () => {
             {/* Card 1 - Borrow */}
             <div style={cardStyle}>
               <div style={marqueeContainerStyle}>
+                <div style={marqueeOverlayStyle} />
                 <div className="features-marquee-ltr">
                   {[...camelImages, ...camelImages].map((src, i) => (
                     <img key={i} src={src} alt="camel" draggable={false} />
@@ -127,10 +137,10 @@ const Features: React.FC = () => {
               <div style={{ padding: '28px 28px 28px 28px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={headingStyle}>Borrow</h3>
                 <p style={textStyle}>
-                  Mint BaseD against your collateral at whatever interest rate you want.
+                  Borrow BaseDollar against ETH, Liquid Staked ETH, Bitcoin, and several types of Aerodrome LP tokens.
                 </p>
                 <button className="features-btn" style={buttonStyle}>
-                  Open Borrow Position
+                  Open a Trove
                 </button>
               </div>
             </div>
@@ -138,6 +148,7 @@ const Features: React.FC = () => {
             {/* Card 2 - Earn */}
             <div style={cardStyle}>
               <div style={marqueeContainerStyle}>
+                <div style={marqueeOverlayStyle} />
                 <div className="features-marquee-rtl">
                   {[...coinImages, ...coinImages].map((src, i) => (
                     <img key={i} src={src} alt="coin" draggable={false} />
@@ -147,10 +158,10 @@ const Features: React.FC = () => {
               <div style={{ padding: '28px 28px 28px 28px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={headingStyle}>Earn</h3>
                 <p style={textStyle}>
-                  Deposit BaseD to earn protocol revenues and liquidation proceeds.
+                  Deposit BaseDollar in the stability pools to earn sustainable multi-source yield.
                 </p>
                 <button className="features-btn" style={buttonStyle}>
-                  Deposit &amp; Earn Now
+                  Deposit &amp; Earn
                 </button>
               </div>
             </div>

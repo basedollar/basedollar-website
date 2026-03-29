@@ -5,19 +5,19 @@ const steps = [
     number: '1',
     icon: '/images/step1.png',
     title: 'Choose Collateral',
-    text: 'Use ETH, cbBTC, wstETH, superOETHb, or Aerodrome LP tokens. Each asset has optimized LTVs for efficiency.',
+    text: 'Use ETH, staked ETH, cbBTC, AERO, or Aerodrome LP tokens. Each asset has optimized LTVs for efficiency.',
   },
   {
     number: '2',
     icon: '/images/step2.png',
-    title: 'Deposit & Borrow',
-    text: 'Deposit collateral and borrow BaseD. LP tokens keep earning AERO while securing your loan.',
+    title: 'Choose Your Interest Rate',
+    text: 'Set your interest rate to as low as 0.5% APY, or choose a manager to set and forget.',
   },
   {
     number: '3',
     icon: '/images/step3.png',
-    title: 'Earn with sBaseD',
-    text: 'Deposit BaseD to earn protocol interest. Opt into FsBaseD for extra AERO and liquidation rewards.',
+    title: 'Borrow and Earn',
+    text: 'Borrow BaseDollar on your terms while yield-bearing tokens keep earning yield for borrowers.',
   },
 ];
 
@@ -27,7 +27,7 @@ const HowItWorks: React.FC = () => {
       id="how-it-works"
       style={{
         backgroundColor: '#f5d57d',
-        padding: '80px 20px',
+        padding: '60px 20px',
       }}
     >
       <div
@@ -46,7 +46,7 @@ const HowItWorks: React.FC = () => {
             margin: 0,
           }}
         >
-          Depositing is Simple
+          Borrow Your Way
         </h2>
 
         {/* Subtitle */}
@@ -68,7 +68,7 @@ const HowItWorks: React.FC = () => {
           style={{
             backgroundColor: '#fdf6e3',
             border: '2px solid #56232f',
-            borderRadius: 20,
+            borderRadius: 10,
             padding: '48px 32px',
           }}
         >
