@@ -127,7 +127,7 @@ const Features: React.FC = () => {
               <div style={{ padding: '28px 28px 28px 28px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={headingStyle}>Borrow</h3>
                 <p style={textStyle}>
-                  Borrow Base Dollar against ETH, Liquid Staked ETH, Bitcoin, and several types of Aerodrome LP tokens.
+                  Borrow BaseDollar against ETH, Liquid Staked ETH, Bitcoin, and several types of Aerodrome LP tokens.
                 </p>
                 <button className="features-btn" style={buttonStyle}>
                   Open a Trove
@@ -147,7 +147,7 @@ const Features: React.FC = () => {
               <div style={{ padding: '28px 28px 28px 28px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={headingStyle}>Earn</h3>
                 <p style={textStyle}>
-                  Deposit Base Dollar in the stability pools to earn sustainable multi-source yield.
+                  Deposit BaseDollar in the stability pools to earn sustainable multi-source yield.
                 </p>
                 <button className="features-btn" style={buttonStyle}>
                   Deposit &amp; Earn

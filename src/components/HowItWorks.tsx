@@ -17,7 +17,7 @@ const steps = [
     number: '3',
     icon: '/images/step3.png',
     title: 'Borrow and Earn',
-    text: 'Borrow Base Dollar on your terms while yield-bearing tokens keep earning yield for borrowers.',
+    text: 'Borrow BaseDollar on your terms while yield-bearing tokens keep earning yield for borrowers.',
   },
 ];
 
