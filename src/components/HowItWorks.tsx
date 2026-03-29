@@ -23,6 +23,14 @@ const steps = [
 
 const HowItWorks: React.FC = () => {
   return (
+    <>
+    <style>{`
+      @media (max-width: 768px) {
+        .hiw-grid {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    `}</style>
     <section
       id="how-it-works"
       style={{
@@ -74,6 +82,7 @@ const HowItWorks: React.FC = () => {
         >
           {/* 3-column grid */}
           <div
+            className="hiw-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
@@ -154,6 +163,7 @@ const HowItWorks: React.FC = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
