@@ -48,6 +48,16 @@ const Features: React.FC = () => {
     alignItems: 'center',
     borderBottom: '2px solid #56232f',
     background: '#f0dbb8',
+    position: 'relative' as const,
+  };
+
+  const marqueeOverlayStyle: React.CSSProperties = {
+    position: 'absolute',
+    inset: 0,
+    pointerEvents: 'none',
+    zIndex: 1,
+    background:
+      'linear-gradient(to right, #f0dbb8 0%, transparent 8%, transparent 92%, #f0dbb8 100%)',
   };
 
   const camelImages = Array.from({ length: 12 }, (_, i) =>
@@ -118,6 +128,7 @@ const Features: React.FC = () => {
             {/* Card 1 - Borrow */}
             <div style={cardStyle}>
               <div style={marqueeContainerStyle}>
+                <div style={marqueeOverlayStyle} />
                 <div className="features-marquee-ltr">
                   {[...camelImages, ...camelImages].map((src, i) => (
                     <img key={i} src={src} alt="camel" draggable={false} />
@@ -138,6 +149,7 @@ const Features: React.FC = () => {
             {/* Card 2 - Earn */}
             <div style={cardStyle}>
               <div style={marqueeContainerStyle}>
+                <div style={marqueeOverlayStyle} />
                 <div className="features-marquee-rtl">
                   {[...coinImages, ...coinImages].map((src, i) => (
                     <img key={i} src={src} alt="coin" draggable={false} />
