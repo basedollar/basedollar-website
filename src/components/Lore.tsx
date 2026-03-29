@@ -17,6 +17,29 @@ const loreCards = [
 
 const Lore: React.FC = () => {
   return (
+    <>
+    <style>{`
+      @media (max-width: 768px) {
+        .lore-story-row {
+          flex-direction: column-reverse !important;
+        }
+        .lore-image-col {
+          min-height: 0 !important;
+        }
+        .lore-image-col img {
+          position: static !important;
+          width: 100% !important;
+          height: auto !important;
+          object-fit: contain !important;
+        }
+        .lore-cards-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .lore-card-img {
+          height: 200px !important;
+        }
+      }
+    `}</style>
     <section
       id="lore"
       style={{
@@ -57,6 +80,7 @@ const Lore: React.FC = () => {
 
       {/* Story Section - flex row: text left, image right */}
       <div
+        className="lore-story-row"
         style={{
           maxWidth: 1200,
           margin: '0 auto',
@@ -141,6 +165,7 @@ const Lore: React.FC = () => {
           </div>
 
           <div
+            className="lore-image-col"
             style={{
               flex: '1 1 360px',
               minWidth: 0,
@@ -174,6 +199,7 @@ const Lore: React.FC = () => {
         }}
       >
         <div
+          className="lore-cards-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
@@ -190,6 +216,7 @@ const Lore: React.FC = () => {
               <img
                 src={card.image}
                 alt={card.caption}
+                className="lore-card-img"
                 style={{
                   width: '100%',
                   height: 340,
@@ -222,6 +249,7 @@ const Lore: React.FC = () => {
 
 
     </section>
+    </>
   );
 };
 
