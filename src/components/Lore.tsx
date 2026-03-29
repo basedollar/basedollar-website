@@ -220,41 +220,7 @@ const Lore: React.FC = () => {
         </div>
       </div>
 
-      {/* Large Full-Width Deity Illustration */}
-      <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          height: 447,
-          overflow: 'hidden',
-        }}
-      >
-        <img
-          src="/images/inti-bg.png"
-          alt="INTI deity background"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: '50% 0%',
-            display: 'block',
-          }}
-        />
-        {/* Centered deity overlay figure */}
-        <img
-          src="/images/inti-text-bg.png"
-          alt="INTI deity figure"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            height: 628,
-            width: 'auto',
-            pointerEvents: 'none',
-          }}
-        />
-      </div>
+
     </section>
   );
 };
