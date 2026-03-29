@@ -34,19 +34,18 @@ const AxoMama: React.FC = () => {
       <style>{`
         .axo-mama-section {
           background-color: #f5d57d;
-          padding: 0 24px 80px;
+          padding: 40px 24px 80px;
           width: 100%;
         }
         .axo-inti-wrapper {
           max-width: 1200px;
-          margin: 0 auto;
+          margin: auto;
           position: relative;
-          margin-bottom: 48px;
         }
-        /* The bordered card for inti-bg */
+        /* Bordered card: landscape only (inti-bg.png) */
         .axo-inti-card {
           width: 100%;
-          border-radius: 16px;
+          border-radius: 10px;
           border: 3px solid #56232f;
           overflow: hidden;
           position: relative;
@@ -54,36 +53,25 @@ const AxoMama: React.FC = () => {
         }
         .axo-inti-card img {
           width: 100%;
-          height: 100%;
           object-fit: cover;
-          object-position: center 20%;
-          display: block;
+          object-position: center top;
           will-change: transform;
         }
-        /* The goddess figure overlaying */
-        .axo-goddess {
-          position: absolute;
-          left: 50%;
-          bottom: -80px;
-          transform: translateX(-50%);
-          height: 540px;
-          width: auto;
-          pointer-events: none;
-          z-index: 2;
-          will-change: transform;
-        }
-        /* Text area below */
-        .axo-text-area {
-          max-width: 1200px;
-          margin: 0 auto;
+        /* Text below the card, on the sides of the goddess (inti-text-bg.png) */
+        .axo-caption-row {
           display: flex;
+          justify-content: space-between;
           align-items: flex-start;
-          gap: 48px;
-          padding-top: 80px;
-          flex-wrap: wrap;
+          gap: 16px;
+          padding: 40px 4px 0;
+          position: relative;
         }
         .axo-text-left {
-          flex: 0 0 auto;
+          position: relative;
+          z-index: 2;
+          flex: 1 1 0;
+          max-width: 38%;
+          text-align: left;
         }
         .axo-text-left h2 {
           font-family: 'Inter', sans-serif;
@@ -91,7 +79,6 @@ const AxoMama: React.FC = () => {
           color: #4a1c28;
           margin: 0 0 12px 0;
           line-height: 1.1;
-          font-style: italic;
           font-weight: 800;
         }
         .axo-text-left p {
@@ -102,11 +89,28 @@ const AxoMama: React.FC = () => {
           opacity: 0.8;
         }
         .axo-text-right {
-          flex: 1 1 300px;
+          position: relative;
+          z-index: 2;
+          flex: 1 1 0;
+          max-width: 38%;
+          min-width: 0;
+          text-align: right;
+        }
+        /* Goddess: centered; caption row stacks above so text stays on sides */
+        .axo-goddess {
+          position: absolute;
+          left: 50%;
+          bottom: -60px;
+          transform: translateX(-50%);
+          height: 580px;
+          width: auto;
+          pointer-events: none;
+          z-index: 1;
+          will-change: transform;
         }
         .axo-text-right p {
           font-family: 'Inter', sans-serif;
-          font-size: 17px;
+          font-size: 18px;
           color: #4a1c28;
           line-height: 1.7;
           margin: 0;
@@ -115,7 +119,8 @@ const AxoMama: React.FC = () => {
         /* Maximized AERO Synergy */
         .axo-aero-section {
           max-width: 1200px;
-          margin: 80px auto 0;
+          padding-top: 20px;
+          margin: 120px auto 0;
         }
         .axo-aero-content {
           display: flex;
@@ -156,20 +161,37 @@ const AxoMama: React.FC = () => {
         }
 
         @media (max-width: 768px) {
+          .axo-inti-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 56px;
+          }
           .axo-inti-card {
             height: auto;
             aspect-ratio: 3 / 2;
+            order: 1;
           }
           .axo-goddess {
-            height: 380px;
-            bottom: -40px;
+            position: relative;
+            left: auto;
+            bottom: auto;
+            height: min(72vw, 380px);
+            margin: -40px auto 0;
+            z-index: 2;
+            order: 2;
+            transform: none !important;
           }
-          .axo-text-area {
+          .axo-caption-row {
             flex-direction: column;
             align-items: center;
-            text-align: center;
             gap: 20px;
-            padding-top: 60px;
+            padding-top: 8px;
+            order: 3;
+          }
+          .axo-text-left,
+          .axo-text-right {
+            max-width: 100%;
+            text-align: center;
           }
           .axo-text-left h2 {
             font-size: 40px;
@@ -189,15 +211,33 @@ const AxoMama: React.FC = () => {
           }
         }
       `}</style>
-      <section className="axo-mama-section" ref={sectionRef}>
+      <section style={{
+          backgroundColor: '#f5d57d',
+          padding: '40px 24px 80px',
+          width: '100%',
+        }} ref={sectionRef}>
         {/* Inti scene with parallax layers */}
         <div className="axo-inti-wrapper">
           <div className="axo-inti-card">
             <img
               src="/images/inti-bg.png"
               alt="INTI deity background"
-              style={{ transform: `translateY(${parallaxBg}px)` }}
+              style={{
+                transform: `translateY(${parallaxBg}px) scale(1.08)`,
+              }}
             />
+          </div>
+          <div className="axo-caption-row">
+            <div className="axo-text-left">
+              <h2>Axo Mama</h2>
+              <p>Goddess of potatoes in Quichua.</p>
+            </div>
+            <div className="axo-text-right">
+              <p>
+                She is the one who generously shares precious{' '}
+                {coin}{' '}<strong>BaseDollar</strong> with every holder.
+              </p>
+            </div>
           </div>
           <img
             className="axo-goddess"
@@ -205,20 +245,6 @@ const AxoMama: React.FC = () => {
             alt="INTI deity figure"
             style={{ transform: `translateX(-50%) translateY(${parallaxFg}px)` }}
           />
-        </div>
-
-        {/* Axo Mama text */}
-        <div className="axo-text-area">
-          <div className="axo-text-left">
-            <h2>Axo Mama</h2>
-            <p>Goddess of potatoes in Quichua.</p>
-          </div>
-          <div className="axo-text-right">
-            <p>
-              She is the one who generously shares precious{' '}
-              {coin}{' '}<strong>BaseD</strong> with every holder.
-            </p>
-          </div>
         </div>
 
         {/* Maximized AERO Synergy */}
