@@ -74,7 +74,7 @@ const Lore: React.FC = () => {
               flex: '1 1 360px',
               backgroundColor: 'rgba(255, 253, 240, 0.92)',
               borderRadius: 10,
-              fontSize: 20,
+              fontSize: 18,
               border: '3px solid #56232f',
               padding: '46px 32px',
               display: 'flex',
