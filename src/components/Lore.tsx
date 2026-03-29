@@ -73,7 +73,7 @@ const Lore: React.FC = () => {
           margin: '0 auto',
           padding: '0 24px',
           display: 'flex',
-          alignItems: 'center',
+          alignItems: 'stretch',
           gap: 32,
           marginBottom: 48,
           flexWrap: 'wrap',
@@ -83,11 +83,11 @@ const Lore: React.FC = () => {
           <div
             style={{
               flex: '1 1 360px',
-              maxWidth: 460,
               backgroundColor: 'rgba(255, 253, 240, 0.92)',
-              borderRadius: 20,
-              border: '3px solid #7ba3d4',
-              padding: '36px 32px',
+              borderRadius: 10,
+              fontSize: 20,
+              border: '3px solid #56232f',
+              padding: '100px 50px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -96,7 +96,6 @@ const Lore: React.FC = () => {
             <p
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 16,
                 color: '#3d3d3d',
                 lineHeight: 1.75,
                 margin: 0,
@@ -106,13 +105,14 @@ const Lore: React.FC = () => {
                 style={{
                   float: 'left',
                   fontFamily: "'Inter', sans-serif",
+                  fontWeight: 700,
                   fontSize: 48,
                   lineHeight: 1,
                   color: '#c4973a',
                   backgroundColor: '#56232f',
                   borderRadius: 6,
-                  width: 52,
-                  height: 52,
+                  width: 54,
+                  height: 54,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -128,7 +128,6 @@ const Lore: React.FC = () => {
             <p
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 15,
                 color: '#3d3d3d',
                 lineHeight: 1.75,
                 marginTop: 20,
@@ -141,7 +140,6 @@ const Lore: React.FC = () => {
             <p
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 15,
                 color: '#3d3d3d',
                 lineHeight: 1.75,
                 marginTop: 20,
@@ -154,16 +152,25 @@ const Lore: React.FC = () => {
             </p>
           </div>
 
-          {/* Lore background image on the right */}
-          <div style={{ flex: '1 1 400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div
+            style={{
+              flex: '1 1 360px',
+              minWidth: 0,
+              minHeight: 240,
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
             <img
               src="/images/lore-bg.png"
               alt="Lore scene"
               style={{
-                maxWidth: '100%',
-                height: 'auto',
-                display: 'block',
-                borderRadius: 12,
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                objectPosition: 'center',
               }}
             />
           </div>
