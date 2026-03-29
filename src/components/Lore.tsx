@@ -1,8 +1,16 @@
 import React from 'react';
 
+const coin = (
+  <img
+    src="/images/coin.png"
+    alt="coin"
+    style={{ width: 24, height: 24, verticalAlign: 'middle', margin: '0 4px' }}
+  />
+);
+
 const loreCards = [
   { image: '/images/lore1.png', caption: 'BASE of the Mountain' },
-  { image: '/images/lore2.png', caption: 'Find BaseD' },
+  { image: '/images/lore2.png', caption: 'Find BaseD', hasCoin: true },
   { image: '/images/lore3.png', caption: 'Aero Ascension' },
   { image: '/images/lore4.png', caption: 'Unlock Perma Regen' },
 ];
@@ -37,7 +45,13 @@ const Lore: React.FC = () => {
             lineHeight: 1.15,
           }}
         >
-          Go Regen get BaseDollar
+          Go Regen get{' '}
+          <img
+            src="/images/coin.png"
+            alt="coin"
+            style={{ width: 48, height: 48, verticalAlign: 'middle', margin: '0 6px' }}
+          />
+          BaseDollar
         </h2>
         <p
           style={{
@@ -52,37 +66,31 @@ const Lore: React.FC = () => {
         </p>
       </div>
 
-      {/* Story Section - full width bg image */}
+      {/* Story Section - flex row: text left, image right */}
       <div
         style={{
-          position: 'relative',
-          width: '100%',
-          minHeight: 480,
-          backgroundImage: 'url(/images/lore-bg.png)',
-            backgroundSize: '434px',
-            backgroundPosition: '0% 0%',
-            backgroundRepeat: 'repeat',
+          maxWidth: 1200,
+          margin: '0 auto',
+          padding: '0 24px',
           display: 'flex',
           alignItems: 'center',
+          gap: 32,
           marginBottom: 48,
+          flexWrap: 'wrap',
         }}
       >
-        <div
-          style={{
-            maxWidth: 1200,
-            margin: '0 auto',
-            padding: '0 24px',
-            width: '100%',
-          }}
-        >
-          {/* Text card overlaid on left */}
+          {/* Text card on the left */}
           <div
             style={{
-              maxWidth: 420,
+              flex: '1 1 360px',
+              maxWidth: 460,
               backgroundColor: 'rgba(255, 253, 240, 0.92)',
               borderRadius: 20,
-              border: '3px solid #56232f',
+              border: '3px solid #7ba3d4',
               padding: '36px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
             }}
           >
             <p
@@ -142,10 +150,23 @@ const Lore: React.FC = () => {
             >
               An advanced civilization capable of generating infinite wealth for
               those who temporarily deposit their tokens — instantly receiving{' '}
-              <strong>BaseD</strong> stable coin tradable on Aerodrome exchange.
+              {coin} <strong>BaseD</strong> stable coin tradable on Aerodrome exchange.
             </p>
           </div>
-        </div>
+
+          {/* Lore background image on the right */}
+          <div style={{ flex: '1 1 400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <img
+              src="/images/lore-bg.png"
+              alt="Lore scene"
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                display: 'block',
+                borderRadius: 12,
+              }}
+            />
+          </div>
       </div>
 
       {/* 4 Illustration Cards */}
@@ -179,7 +200,7 @@ const Lore: React.FC = () => {
                 alt={card.caption}
                 style={{
                   width: '100%',
-                  height: 220,
+                  height: 340,
                   objectFit: 'cover',
                   display: 'block',
                 }}
@@ -194,7 +215,11 @@ const Lore: React.FC = () => {
                   margin: 0,
                 }}
               >
-                {card.caption}
+                {card.hasCoin ? (
+                  <>Find {coin}<strong>BaseD</strong></>
+                ) : (
+                  card.caption
+                )}
               </p>
             </div>
           ))}
