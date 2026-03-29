@@ -17,6 +17,41 @@ const loreCards = [
 
 const Lore: React.FC = () => {
   return (
+    <>
+    <style>{`
+      .lore-image-col img {
+        flex: '1 1 360px',
+        width: '100%',
+      }
+      @media (max-width: 1100px) {
+        .lore-story-row {
+          flex-direction: column-reverse !important;
+        }
+        .lore-image-col img {
+          max-width: 400px;
+        }
+      }
+      @media (max-width: 800px) {
+        .lore-text-col,
+        .lore-image-col {
+          flex: 1 1 auto;
+          width: 100%;
+          max-width: 100%;
+        }
+        .lore-image-col img {
+          width: 100%;
+          min-height: '100%';
+          height: '100%';
+          object-fit: contain;
+        }
+        .lore-cards-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        .lore-card-img {
+          height: 200px;
+        }
+      }
+    `}</style>
     <section
       id="lore"
       style={{
@@ -57,6 +92,7 @@ const Lore: React.FC = () => {
 
       {/* Story Section - flex row: text left, image right */}
       <div
+        className="lore-story-row"
         style={{
           maxWidth: 1200,
           margin: '0 auto',
@@ -68,8 +104,9 @@ const Lore: React.FC = () => {
           flexWrap: 'wrap',
         }}
       >
-          {/* Text card on the left */}
+          {/* Text card on the left — 50% row width beside image */}
           <div
+            className="lore-text-col"
             style={{
               flex: '1 1 360px',
               backgroundColor: 'rgba(255, 253, 240, 0.92)',
@@ -125,43 +162,13 @@ const Lore: React.FC = () => {
             >
               BaseDollar was created to maximize capital efficiency and give the Aerodrome ecosystem its own decentralized stablecoin which can be borrowed for miniscule interest rates while contributing to its capital flywheel. The protocol mints new stablecoins when they are borrowed, and thus has a fraction of the capital cost of other lending markets on the Base network. This creates a market for cheap, efficient, leverage on Aerodrome LP positions and popular Base network assets like cbBTC.
             </p>
-            {/* <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                color: '#3d3d3d',
-                lineHeight: 1.75,
-                marginTop: 20,
-                marginBottom: 0,
-              }}
-            >
-              An advanced civilization capable of generating infinite wealth for
-              those who temporarily deposit their tokens — instantly receiving{' '}
-              {coin} <strong>BaseD</strong> stable coin tradable on Aerodrome exchange.
-            </p> */}
           </div>
 
-          <div
-            style={{
-              flex: '1 1 360px',
-              minWidth: 0,
-              minHeight: 240,
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            <img
-              src="/images/lore-bg.png"
-              alt="Lore scene"
-              style={{
-                position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                objectPosition: 'center',
-              }}
-            />
-          </div>
+          <img
+            className="lore-image-col"
+            src="/images/lore-bg.png"
+            alt="Lore scene"
+          />
       </div>
 
       {/* 4 Illustration Cards */}
@@ -174,6 +181,7 @@ const Lore: React.FC = () => {
         }}
       >
         <div
+          className="lore-cards-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
@@ -190,6 +198,7 @@ const Lore: React.FC = () => {
               <img
                 src={card.image}
                 alt={card.caption}
+                className="lore-card-img"
                 style={{
                   width: '100%',
                   height: 340,
@@ -220,42 +229,9 @@ const Lore: React.FC = () => {
         </div>
       </div>
 
-      {/* Large Full-Width Deity Illustration */}
-      <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          height: 447,
-          overflow: 'hidden',
-        }}
-      >
-        <img
-          src="/images/inti-bg.png"
-          alt="INTI deity background"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: '50% 0%',
-            display: 'block',
-          }}
-        />
-        {/* Centered deity overlay figure */}
-        <img
-          src="/images/inti-text-bg.png"
-          alt="INTI deity figure"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            height: 628,
-            width: 'auto',
-            pointerEvents: 'none',
-          }}
-        />
-      </div>
+
     </section>
+    </>
   );
 };
 
