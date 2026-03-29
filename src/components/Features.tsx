@@ -2,8 +2,8 @@ import React from 'react';
 
 const Features: React.FC = () => {
   const cardStyle: React.CSSProperties = {
-    background: '#f5e6c8',
-    borderRadius: '20px',
+    backgroundColor: '#fdf6e3',
+    borderRadius: '10px',
     border: '2px solid #56232f',
     overflow: 'hidden',
     display: 'flex',
@@ -29,7 +29,7 @@ const Features: React.FC = () => {
     background: '#56232f',
     color: '#f5e6c8',
     border: 'none',
-    borderRadius: '12px',
+    borderRadius: '8px',
     padding: '18px 24px',
     fontSize: '1.1rem',
     fontWeight: 600,
@@ -46,8 +46,7 @@ const Features: React.FC = () => {
     height: '100px',
     display: 'flex',
     alignItems: 'center',
-    borderBottom: '2px solid #56232f',
-    background: '#f0dbb8',
+    backgroundColor: '#fdf6e3',
     position: 'relative' as const,
   };
 
@@ -57,7 +56,7 @@ const Features: React.FC = () => {
     pointerEvents: 'none',
     zIndex: 1,
     background:
-      'linear-gradient(to right, #f0dbb8 0%, transparent 8%, transparent 92%, #f0dbb8 100%)',
+      'linear-gradient(to right, #fdf6e3 0%, transparent 8%, transparent 92%, #fdf6e3 100%)',
   };
 
   const camelImages = Array.from({ length: 12 }, (_, i) =>

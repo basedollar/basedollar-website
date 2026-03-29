@@ -194,7 +194,7 @@ const Lore: React.FC = () => {
                   width: '100%',
                   height: 340,
                   border: '2px solid #56232f',
-                  borderRadius: 16,
+                  borderRadius: 10,
                   objectFit: 'cover',
                   display: 'block',
                 }}

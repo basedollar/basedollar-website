@@ -68,7 +68,7 @@ const HowItWorks: React.FC = () => {
           style={{
             backgroundColor: '#fdf6e3',
             border: '2px solid #56232f',
-            borderRadius: 20,
+            borderRadius: 10,
             padding: '48px 32px',
           }}
         >
