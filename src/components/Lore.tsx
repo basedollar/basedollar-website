@@ -19,24 +19,36 @@ const Lore: React.FC = () => {
   return (
     <>
     <style>{`
-      @media (max-width: 768px) {
+      .lore-image-col img {
+        flex: '1 1 360px',
+        width: '100%',
+      }
+      @media (max-width: 1100px) {
         .lore-story-row {
           flex-direction: column-reverse !important;
         }
+        .lore-image-col img {
+          max-width: 400px;
+        }
+      }
+      @media (max-width: 800px) {
+        .lore-text-col,
         .lore-image-col {
-          min-height: 0 !important;
+          flex: 1 1 auto;
+          width: 100%;
+          max-width: 100%;
         }
         .lore-image-col img {
-          position: static !important;
-          width: 100% !important;
-          height: auto !important;
-          object-fit: contain !important;
+          width: 100%;
+          min-height: '100%';
+          height: '100%';
+          object-fit: contain;
         }
         .lore-cards-grid {
           grid-template-columns: repeat(2, 1fr) !important;
         }
         .lore-card-img {
-          height: 200px !important;
+          height: 200px;
         }
       }
     `}</style>
@@ -92,8 +104,9 @@ const Lore: React.FC = () => {
           flexWrap: 'wrap',
         }}
       >
-          {/* Text card on the left */}
+          {/* Text card on the left — 50% row width beside image */}
           <div
+            className="lore-text-col"
             style={{
               flex: '1 1 360px',
               backgroundColor: 'rgba(255, 253, 240, 0.92)',
@@ -149,44 +162,13 @@ const Lore: React.FC = () => {
             >
               BaseDollar was created to maximize capital efficiency and give the Aerodrome ecosystem its own decentralized stablecoin which can be borrowed for miniscule interest rates while contributing to its capital flywheel. The protocol mints new stablecoins when they are borrowed, and thus has a fraction of the capital cost of other lending markets on the Base network. This creates a market for cheap, efficient, leverage on Aerodrome LP positions and popular Base network assets like cbBTC.
             </p>
-            {/* <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                color: '#3d3d3d',
-                lineHeight: 1.75,
-                marginTop: 20,
-                marginBottom: 0,
-              }}
-            >
-              An advanced civilization capable of generating infinite wealth for
-              those who temporarily deposit their tokens — instantly receiving{' '}
-              {coin} <strong>BaseD</strong> stable coin tradable on Aerodrome exchange.
-            </p> */}
           </div>
 
-          <div
+          <img
             className="lore-image-col"
-            style={{
-              flex: '1 1 360px',
-              minWidth: 0,
-              minHeight: 240,
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            <img
-              src="/images/lore-bg.png"
-              alt="Lore scene"
-              style={{
-                position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                objectPosition: 'center',
-              }}
-            />
-          </div>
+            src="/images/lore-bg.png"
+            alt="Lore scene"
+          />
       </div>
 
       {/* 4 Illustration Cards */}
