@@ -108,22 +108,22 @@ const Footer: React.FC = () => {
                 opacity: 0.85,
               }}
             >
-              Socials:
+              Follow on
             </span>
-            <a href="#" aria-label="X (Twitter)" style={{ display: 'inline-flex' }}>
+            <a href="https://x.com/BaseDollarOrg" aria-label="X (Twitter)" style={{ display: 'inline-flex' }}>
               <img
                 src="/images/x-icon.svg"
                 alt="X"
                 style={{ width: 24, height: 24, display: 'block' }}
               />
             </a>
-            <a href="#" aria-label="Discord" style={{ display: 'inline-flex' }}>
+            {/* <a href="#" aria-label="Discord" style={{ display: 'inline-flex' }}>
               <img
                 src="/images/discord-icon.png"
                 alt="Discord"
                 style={{ width: 24, height: 24, display: 'block' }}
               />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
