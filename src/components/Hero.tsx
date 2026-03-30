@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const HeroBorderStrip = () => (
   <div
@@ -16,6 +16,103 @@ const HeroBorderStrip = () => (
     }}
   />
 );
+
+const EmailForm: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setStatus('success');
+        setMessage('You\'re on the waitlist!');
+        setEmail('');
+      } else {
+        setStatus('error');
+        setMessage(data.error || 'Something went wrong');
+      }
+    } catch {
+      setStatus('error');
+      setMessage('Network error. Try again.');
+    }
+  };
+
+  if (status === 'success') {
+    return (
+      <div style={{ flex: '0 0 auto', textAlign: 'center' }}>
+        <p style={{
+          color: '#f5d57d',
+          fontSize: '1.25rem',
+          fontWeight: 700,
+          margin: 0,
+        }}>
+          ✓ {message}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ flex: '0 0 auto' }}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', border: '2px solid #f5d57d', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '10px' }}>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => { setEmail(e.target.value); setStatus('idle'); }}
+          required
+          style={{
+            padding: '16px 24px',
+            fontSize: '1.1rem',
+            border: 'none',
+            backgroundColor: 'transparent',
+            color: '#f3f3e5',
+            minWidth: '260px',
+          }}
+        />
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          style={{
+            backgroundColor: '#f5d57d',
+            color: '#4a1c28',
+            fontSize: '1.15rem',
+            fontWeight: 700,
+            padding: '16px 24px',
+            borderTopRightRadius: '6px',
+            borderBottomRightRadius: '6px',
+            border: '2px solid #f5d57d',
+            cursor: status === 'loading' ? 'wait' : 'pointer',
+            letterSpacing: '0.5px',
+            opacity: status === 'loading' ? 0.7 : 1,
+            transition: 'opacity 0.2s ease',
+          }}
+        >
+          {status === 'loading' ? 'Joining...' : 'Notify Me'}
+        </button>
+      </form>
+      <p style={{ color: '#f5f0d0', fontSize: '0.9rem', marginTop: '8px', marginBottom: 0, textAlign: 'right' }}>
+        We'll notify you when we launch. No spam, ever.
+      </p>
+      {status === 'error' && (
+        <p style={{ color: '#ff6b6b', fontSize: '0.9rem', marginTop: '8px', marginBottom: 0 }}>
+          {message}
+        </p>
+      )}
+    </div>
+  );
+};
 
 const Hero: React.FC = () => {
   return (
@@ -108,8 +205,11 @@ const Hero: React.FC = () => {
           </p>
         </div>
 
+        {/* Right: Email Signup Form */}
+        <EmailForm />
+
         {/* Right: Deposit Now Button */}
-        <div style={{ flex: '0 0 auto' }}>
+        {/* <div style={{ flex: '0 0 auto' }}>
           <a
             href="#deposit"
             style={{
@@ -130,7 +230,7 @@ const Hero: React.FC = () => {
           >
             Deposit Now
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

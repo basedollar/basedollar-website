@@ -87,11 +87,11 @@ const Navbar: React.FC = () => {
           transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
           white-space: nowrap;
         }
-        .navbar-cta a:hover {
-          background-color: #e8c96e;
-          transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(245, 213, 125, 0.3);
-        }
+        // .navbar-cta a:hover {
+        //   background-color: #e8c96e;
+        //   transform: translateY(-1px);
+        //   box-shadow: 0 4px 12px rgba(245, 213, 125, 0.3);
+        // }
         .navbar-cta a:active {
           transform: translateY(0);
         }
@@ -204,8 +204,11 @@ const Navbar: React.FC = () => {
         </ul>
 
         <div className="navbar-cta">
-          <a href="https://app.basedollar.org" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://app.basedollar.org" target="_blank" rel="noopener noreferrer">
             Deposit Now
+          </a> */}
+          <a href="#" rel="noopener noreferrer">
+            Coming Soon
           </a>
         </div>
 
