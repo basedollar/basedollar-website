@@ -6,6 +6,7 @@ import Lore from './components/Lore'
 import AxoMama from './components/AxoMama'
 import Footer from './components/Footer'
 import BorderStrip from './components/BorderStrip'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <AxoMama />
       <BorderStrip />
       <Footer />
+      <Analytics />
     </div>
   )
 }
