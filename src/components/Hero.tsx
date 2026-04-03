@@ -64,8 +64,8 @@ const EmailForm: React.FC = () => {
   }
 
   return (
-    <div style={{ flex: '0 0 auto' }}>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', border: '2px solid #f5d57d', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '10px' }}>
+    <div style={{ flex: '1 1 280px', maxWidth: '460px', minWidth: 0 }}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'stretch', border: '2px solid #f5d57d', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '10px', width: '100%', boxSizing: 'border-box' }}>
         <input
           type="email"
           placeholder="Enter your email"
@@ -73,12 +73,15 @@ const EmailForm: React.FC = () => {
           onChange={(e) => { setEmail(e.target.value); setStatus('idle'); }}
           required
           style={{
-            padding: '16px 24px',
-            fontSize: '1.1rem',
+            padding: '14px 16px',
+            fontSize: '1rem',
             border: 'none',
             backgroundColor: 'transparent',
             color: '#f3f3e5',
-            minWidth: '260px',
+            flex: '1 1 0%',
+            minWidth: 0,
+            outline: 'none',
+            boxSizing: 'border-box',
           }}
         />
         <button
@@ -87,12 +90,14 @@ const EmailForm: React.FC = () => {
           style={{
             backgroundColor: '#f5d57d',
             color: '#4a1c28',
-            fontSize: '1.15rem',
+            fontSize: '1rem',
             fontWeight: 700,
-            padding: '16px 24px',
+            padding: '14px 20px',
             borderTopRightRadius: '6px',
             borderBottomRightRadius: '6px',
-            border: '2px solid #f5d57d',
+            border: 'none',
+            whiteSpace: 'nowrap',
+            flexShrink: 0,
             cursor: status === 'loading' ? 'wait' : 'pointer',
             letterSpacing: '0.5px',
             opacity: status === 'loading' ? 0.7 : 1,
@@ -102,7 +107,7 @@ const EmailForm: React.FC = () => {
           {status === 'loading' ? 'Joining...' : 'Notify Me'}
         </button>
       </form>
-      <p style={{ color: '#f5f0d0', fontSize: '0.9rem', marginTop: '8px', marginBottom: 0, textAlign: 'right' }}>
+      <p style={{ color: '#f5f0d0', fontSize: '0.85rem', marginTop: '8px', marginBottom: 0 }}>
         We'll notify you when we launch. No spam, ever.
       </p>
       {status === 'error' && (
@@ -122,9 +127,7 @@ const Hero: React.FC = () => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'stretch',
-      height: '100vh',
       boxSizing: 'border-box',
-      overflow: 'hidden',
     }}>
       {/* Hero Image Area with border strips — fills remaining space */}
       <div
@@ -132,8 +135,6 @@ const Hero: React.FC = () => {
           position: 'relative',
           width: '100%',
           overflow: 'hidden',
-          flex: '1 1 0%',
-          minHeight: 0,
           display: 'flex',
           flexDirection: 'column',
         }}
@@ -143,8 +144,9 @@ const Hero: React.FC = () => {
 
         {/* Hero Banner Image — fills remaining space between strips */}
         <div style={{
-          flex: '1 1 0%',
-          minHeight: 0,
+          height: '50vw',
+          maxHeight: 'calc(100svh - 350px)',
+          minHeight: '200px',
           overflow: 'hidden',
         }}>
           <img
@@ -178,7 +180,7 @@ const Hero: React.FC = () => {
         }}
       >
         {/* Left: Heading + Subtext */}
-        <div style={{ flex: '1 1 500px', maxWidth: '700px' }}>
+        <div style={{ flex: '1 1 300px', maxWidth: '700px', minWidth: 0 }}>
           <h1
             style={{
               fontSize: '3rem',
