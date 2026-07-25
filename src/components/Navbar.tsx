@@ -13,9 +13,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Features', href: '#features' },
-    { label: 'How it Work', href: '#how-it-works' },
-    { label: 'Lore', href: '#lore' },
+    { label: 'Features', href: '/#features' },
+    { label: 'How it Work', href: '/#how-it-works' },
+    { label: 'Lore', href: '/#lore' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Documentation', href: 'https://docs.basedollar.org', external: true },
   ];
 
@@ -87,11 +88,11 @@ const Navbar: React.FC = () => {
           transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
           white-space: nowrap;
         }
-        // .navbar-cta a:hover {
-        //   background-color: #e8c96e;
-        //   transform: translateY(-1px);
-        //   box-shadow: 0 4px 12px rgba(245, 213, 125, 0.3);
-        // }
+        /* .navbar-cta a:hover {
+          background-color: #e8c96e;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(245, 213, 125, 0.3);
+        } */
         .navbar-cta a:active {
           transform: translateY(0);
         }
@@ -186,7 +187,7 @@ const Navbar: React.FC = () => {
       `}</style>
 
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
-        <a href="#" className="navbar-brand">
+        <a href="/" className="navbar-brand">
           <img src="/images/logo.png" alt="Base Dollar" className="navbar-logo" />
         </a>
 
