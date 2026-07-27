@@ -205,11 +205,8 @@ const Navbar: React.FC = () => {
         </ul>
 
         <div className="navbar-cta">
-          {/* <a href="https://app.basedollar.org" target="_blank" rel="noopener noreferrer">
-            Deposit Now
-          </a> */}
-          <a href="#" rel="noopener noreferrer">
-            Coming Soon
+          <a href="https://app.basedollar.org" target="_blank" rel="noopener noreferrer">
+            Go to App
           </a>
         </div>
 
@@ -242,7 +239,7 @@ const Navbar: React.FC = () => {
           rel="noopener noreferrer"
           onClick={() => setMobileMenuOpen(false)}
         >
-          Deposit Now
+          Go to App
         </a>
       </div>
     </>

@@ -104,11 +104,11 @@ const EmailForm: React.FC = () => {
             transition: 'opacity 0.2s ease',
           }}
         >
-          {status === 'loading' ? 'Joining...' : 'Notify Me'}
+          {status === 'loading' ? 'Subscribing...' : 'Get Updates'}
         </button>
       </form>
       <p style={{ color: '#f5f0d0', fontSize: '0.85rem', marginTop: '8px', marginBottom: 0 }}>
-        We'll notify you when we launch. No spam, ever.
+        Get notified on updates. No spam, ever.
       </p>
       {status === 'error' && (
         <p style={{ color: '#ff6b6b', fontSize: '0.9rem', marginTop: '8px', marginBottom: 0 }}>
