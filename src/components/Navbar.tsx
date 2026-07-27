@@ -234,7 +234,7 @@ const Navbar: React.FC = () => {
             {link.label}
           </a>
         ))}
-        <a
+        {/* <a
           className="mobile-cta"
           href="https://app.basedollar.org"
           target="_blank"
@@ -242,6 +242,15 @@ const Navbar: React.FC = () => {
           onClick={() => setMobileMenuOpen(false)}
         >
           Deposit Now
+        </a> */}
+        <a
+          className="mobile-cta"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Coming Soon
         </a>
       </div>
     </>
