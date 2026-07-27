@@ -246,7 +246,6 @@ const Navbar: React.FC = () => {
         <a
           className="mobile-cta"
           href="#"
-          target="_blank"
           rel="noopener noreferrer"
           onClick={() => setMobileMenuOpen(false)}
         >
