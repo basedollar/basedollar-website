@@ -16,7 +16,7 @@ Base Dollar is a friendly fork of Liquity V2, a collateralized debt position (CD
 
 We also plan to add AERO and select Aero LP positions as collateral soon after [Aero](https://aero.xyz/) launches later this year.
 
-Borrowers who use these positions will continue earning AERO rewards while they borrow. The interest rate on each loan will also affect its AERO rewards. Positions with above-average rates will receive a proportional boost, while positions with below-average rates will receive fewer rewards. Our docs explain the mechanism in more detail.
+Borrowers who use these positions will continue earning AERO rewards while they borrow. The interest rate on each loan will also affect its AERO rewards. Positions with above-average rates will receive a proportional boost, while positions with below-average rates will receive fewer rewards. Our [docs](https://docs.basedollar.org/docs/user-docs/lp-token-collaterals#aero-distribution) explain the mechanism in more detail.
 
 ## Earn with BD
 
