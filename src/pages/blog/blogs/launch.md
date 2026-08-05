@@ -1,6 +1,6 @@
 ---
 title: Base Dollar is Live
-date: 2026-07-27
+date: 2026-08-06
 author: Base Dollar contributors
 image: /images/hero-banner-2.png
 ---
@@ -13,9 +13,8 @@ Base Dollar is a friendly fork of Liquity V2, a collateralized debt position (CD
 - rETH
 - cbETH
 - cbBTC
-- AERO
 
-We also plan to add select Aerodrome LP positions as collateral very soon. 
+We also plan to add AERO and select Aero LP positions as collateral soon after [Aero](https://aero.xyz/) launches later this year.
 
 Borrowers who use these positions will continue earning AERO rewards while they borrow. The interest rate on each loan will also affect its AERO rewards. Positions with above-average rates will receive a proportional boost, while positions with below-average rates will receive fewer rewards. Our docs explain the mechanism in more detail.
 
@@ -39,9 +38,9 @@ Audits reduce risk but cannot guarantee full elimination of it. Please review th
 Base Dollar exists because many people shared their work, time, and judgment with us.
 
 In no particular order, we want to thank:
-- The Nerite community for its contributions, support, and candid feedback throughout development
+- The Nerite community for their contributions, support, and feedback throughout development
 - The Sherlock auditors for two thorough audit rounds and Lucas from the team for his help coordinating the whole process
-- The Zero Cool team for its AI-powered audit scan
+- The Zero Cool team for their AI-powered audit scan
 - The Liquity team for licensing Liquity V2 to us and for their technical support and feedback
-- Stengarl for his help selecting the launch collateral assets
+- Abmis and the Aero team for their technical support and resources for our Aero integration
 - Louchie for the art and website design
