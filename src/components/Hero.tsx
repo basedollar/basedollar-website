@@ -1,22 +1,5 @@
 import React, { useState } from 'react';
 
-const HeroBorderStrip = () => (
-  <div
-    style={{
-      width: '100%',
-      height: 33,
-      minHeight: 33,
-      flexShrink: 0,
-      backgroundImage: 'url(/images/border-pattern.png)',
-      backgroundRepeat: 'repeat',
-      backgroundSize: '45px',
-      backgroundColor: '#56232f',
-      position: 'relative',
-      zIndex: 2,
-    }}
-  />
-);
-
 const EmailForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -36,7 +19,7 @@ const EmailForm: React.FC = () => {
       const data = await res.json();
       if (res.ok && data.success) {
         setStatus('success');
-        setMessage('You\'re on the waitlist!');
+        setMessage("You're on the waitlist!");
         setEmail('');
       } else {
         setStatus('error');
@@ -49,193 +32,216 @@ const EmailForm: React.FC = () => {
   };
 
   if (status === 'success') {
-    return (
-      <div style={{ flex: '0 0 auto', textAlign: 'center' }}>
-        <p style={{
-          color: '#f5d57d',
-          fontSize: '1.25rem',
-          fontWeight: 700,
-          margin: 0,
-        }}>
-          ✓ {message}
-        </p>
-      </div>
-    );
+    return <p className="hero-form-message hero-form-message--success">✓ {message}</p>;
   }
 
   return (
-    <div style={{ flex: '1 1 280px', maxWidth: '460px', minWidth: 0 }}>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'stretch', border: '2px solid #f5d57d', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '10px', width: '100%', boxSizing: 'border-box' }}>
+    <div className="hero-form-wrap">
+      <form className="hero-form" onSubmit={handleSubmit}>
+        <label className="sr-only" htmlFor="hero-email">Email address</label>
         <input
+          id="hero-email"
           type="email"
           placeholder="Enter your email"
           value={email}
-          onChange={(e) => { setEmail(e.target.value); setStatus('idle'); }}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setStatus('idle');
+          }}
           required
-          style={{
-            padding: '14px 16px',
-            fontSize: '1rem',
-            border: 'none',
-            backgroundColor: 'transparent',
-            color: '#f3f3e5',
-            flex: '1 1 0%',
-            minWidth: 0,
-            outline: 'none',
-            boxSizing: 'border-box',
-          }}
         />
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          style={{
-            backgroundColor: '#f5d57d',
-            color: '#4a1c28',
-            fontSize: '1rem',
-            fontWeight: 700,
-            padding: '14px 20px',
-            borderTopRightRadius: '6px',
-            borderBottomRightRadius: '6px',
-            border: 'none',
-            whiteSpace: 'nowrap',
-            flexShrink: 0,
-            cursor: status === 'loading' ? 'wait' : 'pointer',
-            letterSpacing: '0.5px',
-            opacity: status === 'loading' ? 0.7 : 1,
-            transition: 'opacity 0.2s ease',
-          }}
-        >
-          {status === 'loading' ? 'Subscribing...' : 'Get Updates'}
+        <button type="submit" disabled={status === 'loading'}>
+          {status === 'loading' ? 'Joining...' : 'Notify Me'}
         </button>
       </form>
-      <p style={{ color: '#f5f0d0', fontSize: '0.85rem', marginTop: '8px', marginBottom: 0 }}>
-        Get notified on updates. No spam, ever.
-      </p>
+      <p className="hero-form-note">We'll notify you when we launch. No spam, ever.</p>
       {status === 'error' && (
-        <p style={{ color: '#ff6b6b', fontSize: '0.9rem', marginTop: '8px', marginBottom: 0 }}>
-          {message}
-        </p>
+        <p className="hero-form-message hero-form-message--error">{message}</p>
       )}
     </div>
   );
 };
 
-const Hero: React.FC = () => {
-  return (
-    <section style={{
-      width: '100%',
-      paddingTop: 72,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'stretch',
-      boxSizing: 'border-box',
-    }}>
-      {/* Hero Image Area with border strips — fills remaining space */}
-      <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
-        {/* Top border strip */}
-        <HeroBorderStrip />
+const Hero: React.FC = () => (
+  <section className="hero">
+    <style>{`
+      .hero {
+        position: relative;
+        min-height: calc(100svh - 72px);
+        margin-top: 72px;
+        padding: 0 24px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: #dca95d url('/images/hero-landscape-generated.webp') center top / cover no-repeat;
+        isolation: isolate;
+      }
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(245, 213, 125, 0.3);
+        z-index: -1;
+      }
+      .hero::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 18px;
+        background: #56232f url('/images/border-pattern.png') repeat center / 30px auto;
+        z-index: 3;
+      }
+      .hero-content {
+        width: min(830px, 100%);
+        min-width: 0;
+        margin-top: -18px;
+        text-align: center;
+        z-index: 2;
+      }
+      .hero h1 {
+        max-width: 780px;
+        margin: 0 auto;
+        color: #4a1c28;
+        font-size: clamp(3.25rem, 7.2vw, 6.6rem);
+        line-height: 0.92;
+        letter-spacing: -0.065em;
+        text-wrap: balance;
+      }
+      .hero-description {
+        max-width: 620px;
+        margin: 28px auto 30px;
+        color: #63303d;
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+        line-height: 1.55;
+        text-wrap: balance;
+      }
+      .hero-form-wrap {
+        width: min(520px, 100%);
+        margin: 0 auto;
+      }
+      .hero-form {
+        display: flex;
+        width: 100%;
+        border: 0;
+        border-radius: 10px;
+        background: transparent;
+        transition: box-shadow 0.2s ease;
+      }
+      .hero-form:focus-within {
+        box-shadow: 0 0 0 3px rgba(74, 28, 40, 0.12);
+      }
+      .hero-form input {
+        min-width: 0;
+        flex: 1;
+        padding: 14px 16px;
+        border: 2px solid #4a1c28;
+        border-right: 0;
+        border-radius: 10px 0 0 10px;
+        outline: none;
+        background: rgba(255, 252, 232, 0.72);
+        color: #4a1c28;
+        font: inherit;
+      }
+      .hero-form input::placeholder {
+        color: rgba(74, 28, 40, 0.55);
+      }
+      .hero-form input:focus {
+        outline: none;
+      }
+      .hero-form button {
+        padding: 14px 22px;
+        border: 2px solid #4a1c28;
+        border-radius: 0 10px 10px 0;
+        margin: 0;
+        appearance: none;
+        background: #4a1c28;
+        color: #fff9dd;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 700;
+        white-space: nowrap;
+        transition: background-color 0.2s ease, opacity 0.2s ease;
+      }
+      .hero-form button:hover:not(:disabled) {
+        background: #592233;
+        opacity: 0.94;
+      }
+      .hero-form button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+      .hero-form-note,
+      .hero-form-message {
+        margin: 10px 0 0;
+        font-size: 0.82rem;
+      }
+      .hero-form-note { color: rgba(74, 28, 40, 0.72); }
+      .hero-form-message--success { color: #4a1c28; font-weight: 700; }
+      .hero-form-message--error { color: #a32335; }
+      .hero-people {
+        position: absolute;
+        left: clamp(16px, 3vw, 48px);
+        bottom: -50px;
+        width: clamp(260px, 29vw, 430px);
+        z-index: 1;
+        pointer-events: none;
+        filter: drop-shadow(0 18px 18px rgba(74, 28, 40, 0.12));
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      @media (max-width: 760px) {
+        .hero {
+          min-height: 690px;
+          padding-inline: 20px;
+          place-items: start center;
+        }
+        .hero-content {
+          margin-top: 105px;
+        }
+        .hero h1 {
+          font-size: clamp(3.2rem, 16vw, 5.2rem);
+        }
+        .hero-description {
+          margin-top: 22px;
+        }
+        .hero-people {
+          left: -12px;
+          bottom: -34px;
+          width: 250px;
+          opacity: 0.9;
+        }
+      }
+      @media (max-width: 500px) {
+        .hero-form input { padding-inline: 13px; }
+        .hero-form button { padding-inline: 16px; }
+        .hero-people { width: 210px; left: -16px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-form button { transition: none; }
+      }
+    `}</style>
 
-        {/* Hero Banner Image — fills remaining space between strips */}
-        <div style={{
-          height: '50vw',
-          maxHeight: 'calc(100svh - 350px)',
-          minHeight: '200px',
-          overflow: 'hidden',
-        }}>
-          <img
-            src="/images/hero-banner-2.png"
-            alt="Base Dollar - Inca-themed landscape"
-            style={{
-              width: '100%',
-              height: '100%',
-              display: 'block',
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-        </div>
+    <img className="hero-people" src="/images/hero-element.png" alt="" aria-hidden="true" />
 
-        {/* Bottom border strip */}
-        <HeroBorderStrip />
-      </div>
-
-      {/* Dark Brown Content Section — never shrinks, always visible */}
-      <div
-        style={{
-          backgroundColor: '#4a1c28',
-          padding: '40px 40px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '24px',
-          flexShrink: 0,
-        }}
-      >
-        {/* Left: Heading + Subtext */}
-        <div style={{ flex: '1 1 300px', maxWidth: '700px', minWidth: 0 }}>
-          <h1
-            style={{
-              fontSize: '3rem',
-              fontWeight: 800,
-              color: '#f3f3e5',
-              margin: '0 0 16px 0',
-              lineHeight: 1.15,
-            }}
-          >
-            Welcome to Base Dollar
-          </h1>
-          <p
-            style={{
-              fontSize: '1.25rem',
-              color: '#f5f0d0',
-              margin: 0,
-              lineHeight: 1.6,
-              maxWidth: '560px',
-              opacity: 0.9,
-            }}
-          >
-            A next-generation stablecoin protocol on Base with maximized AERO
-            synergy.
-          </p>
-        </div>
-
-        {/* Right: Email Signup Form */}
-        <EmailForm />
-
-        {/* Right: Deposit Now Button */}
-        {/* <div style={{ flex: '0 0 auto' }}>
-          <a
-            href="#deposit"
-            style={{
-              display: 'inline-block',
-              backgroundColor: '#f5d57d',
-              color: '#4a1c28',
-              fontSize: '1.25rem',
-              fontWeight: 700,
-              padding: '18px 48px',
-              borderRadius: '40px',
-              textDecoration: 'none',
-              cursor: 'pointer',
-              border: 'none',
-              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
-              letterSpacing: '0.5px',
-            }}
-          >
-            Deposit Now
-          </a>
-        </div> */}
-      </div>
-    </section>
-  );
-};
+    <div className="hero-content">
+      <h1>Base Dollar</h1>
+      <p className="hero-description">
+        A next-generation stablecoin protocol on Base with maximized AERO synergy.
+      </p>
+      <EmailForm />
+    </div>
+  </section>
+);
 
 export default Hero;
