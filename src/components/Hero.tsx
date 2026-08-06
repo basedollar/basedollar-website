@@ -51,10 +51,10 @@ const EmailForm: React.FC = () => {
           required
         />
         <button type="submit" disabled={status === 'loading'}>
-          {status === 'loading' ? 'Joining...' : 'Notify Me'}
+          {status === 'loading' ? 'Subscribing...' : 'Get Updates'}
         </button>
       </form>
-      <p className="hero-form-note">We'll notify you when we launch. No spam, ever.</p>
+      <p className="hero-form-note">Get notified on updates. No spam, ever.</p>
       {status === 'error' && (
         <p className="hero-form-message hero-form-message--error">{message}</p>
       )}
