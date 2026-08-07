@@ -43,4 +43,9 @@ In no particular order, we want to thank:
 - The Zero Cool team for their AI-powered audit scan
 - The Liquity team for licensing Liquity V2 to us and for their technical support and feedback
 - Abmis and the Aero team for their technical support and resources for our Aero integration
+- API3 for being our oracle provider and their support
+- TokenBrice and DeFi Collective for their support and backing
+- Stengarl for the analysis, support and feedback on the protocol economics
+- Chris and Summerstone as our partner for handling delegations, liquidations and redemptions
+- Our core contributors George, Joseph and all others who contributed to the Base Dollar, Nerite and Liquity codebases
 - Louchie for the art and website design
