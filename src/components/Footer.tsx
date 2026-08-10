@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
               opacity: 0.7,
             }}
           >
-            © 2026 BaseDollar
+            © 2026 Base Dollar
           </span>
           <span
             style={{

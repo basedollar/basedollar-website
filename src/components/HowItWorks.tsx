@@ -4,7 +4,7 @@ const steps = [
   {
     number: '1',
     title: 'Choose Collateral',
-    text: 'Use ETH, staked ETH, cbBTC, AERO, or Aerodrome LP tokens. Each asset has optimized LTVs for efficiency.',
+    text: 'Use ETH, staked ETH, cbBTC, AERO, or Aero LP tokens. Each asset has optimized LTVs for efficiency.',
   },
   {
     number: '2',
@@ -14,7 +14,7 @@ const steps = [
   {
     number: '3',
     title: 'Borrow and Earn',
-    text: 'Borrow BaseDollar on your terms while yield-bearing tokens keep earning yield for borrowers.',
+    text: 'Borrow $BD on your terms while yield-bearing tokens keep earning yield for borrowers.',
   },
 ];
 

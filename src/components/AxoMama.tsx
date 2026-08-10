@@ -14,7 +14,7 @@ const AxoMama: React.FC = () => (
         <p className="axo-sharing">
           She is the one who generously shares precious{' '}
           <img src="/images/coin.png" alt="coin" />{' '}
-          <strong>BaseDollar</strong> with every holder.
+          <strong>Base Dollar</strong> with every holder.
         </p>
       </div> */}
 
@@ -22,10 +22,10 @@ const AxoMama: React.FC = () => (
         <div className="aero-copy">
           <h2>Maximized AERO Synergy</h2>
           <p>
-            BaseDollar was specifically designed to boost AERO and plug in to the Aerodrome liquidity flywheel.
+            Base Dollar was specifically designed to boost AERO and plug in to the Aero liquidity flywheel.
           </p>
           <p>
-            Aerodrome LP token depositors get cheap leverage on their LP positions, earning the protocol AERO rewards. AERO rewards boost BaseDollar liquidity providers and users across the Base network, increasing yield for holders. Increased yield drives more demand for BaseDollar products and borrowers. Borrower fees, liquidation fees, and incentives go to BaseDollar holders via the Stability Pools.
+            Aero LP token depositors get cheap leverage on their LP positions, earning the protocol AERO rewards. AERO rewards boost Base Dollar liquidity providers and users across the Base network, increasing yield for holders. Increased yield drives more demand for Base Dollar products and borrowers. Borrower fees, liquidation fees, and incentives go to $BD holders via the Stability Pools.
           </p>
           <p>AERO is essential every step of the way.</p>
         </div>
