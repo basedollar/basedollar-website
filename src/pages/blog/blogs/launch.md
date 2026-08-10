@@ -1,8 +1,8 @@
 ---
 title: Base Dollar is Live
-date: 2026-08-06
+date: 2026-08-11
 author: Base Dollar contributors
-image: /images/hero-banner-2.png
+image: /blog/images/bd_cover_og.jpg
 ---
 
 [Base Dollar is now live on Base!](https://app.basedollar.org/) Borrow the $BD stablecoin against supported collateral or deposit $BD into a Stability Pool to earn yield.
