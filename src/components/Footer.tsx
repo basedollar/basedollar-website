@@ -68,10 +68,10 @@ const Footer: React.FC = () => {
               gap: 12,
             }}
           >
-            {['Docs', 'Brand Assets', 'Dune Analytics'].map((label) => (
+            {[{label: 'Documentation', link: "docs.basedollar.org"}].map(({label, link}) => (
               <li key={label}>
                 <a
-                  href="#"
+                  href={link}
                   style={{
                     color: '#f3f3e5',
                     textDecoration: 'none',
