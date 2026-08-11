@@ -51,7 +51,6 @@ In no particular order, we want to thank:
 - Stengarl for the analysis, support and feedback on the protocol economics
 - Chris and Summerstone as our partner for handling delegations, liquidations and redemptions
 - Our core contributors [georgeh](https://x.com/georgeh0x), [Cupojoseph](https://x.com/CupOJoseph) and all others who contributed to the Base Dollar, Nerite and Liquity codebases
-- Louchie for the art and website design
 
 
 > Base Dollar is not affiliated with Coinbase, Base Chain, or Base App in any way. It is simply the only licensed friendly fork of Liquity V2 on the open Base network.
