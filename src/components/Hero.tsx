@@ -232,7 +232,7 @@ const Hero: React.FC = () => (
       }
     `}</style>
 
-    <img className="hero-people" src="/images/hero-element.png" alt="" aria-hidden="true" />
+    {/* <img className="hero-people" src="/images/hero-element.png" alt="" aria-hidden="true" /> */}
 
     <div className="hero-content">
       <h1>Base Dollar</h1>

@@ -25,7 +25,7 @@ const Lore: React.FC = () => (
           </p>
         </div>
         <figure className="lore-figure">
-          <img src="/images/lore1.png" alt="Lore scene" />
+          <img src="/images/axo-mama-2.png" alt="Lore scene" />
         </figure>
       </div>
 

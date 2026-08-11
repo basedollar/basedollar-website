@@ -30,7 +30,7 @@ const AxoMama: React.FC = () => (
           <p>AERO is essential every step of the way.</p>
         </div>
         <div className="aero-art">
-          <img src="/images/axo-mama.png" alt="Axo Mama potatoes and corn" />
+          <img src="/images/potato-pile-b.png" alt="Axo Mama potatoes and corn" />
         </div>
       </div>
     </div>
