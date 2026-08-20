@@ -68,7 +68,11 @@ const Footer: React.FC = () => {
               gap: 12,
             }}
           >
-            {[{label: 'Documentation', link: "docs.basedollar.org"}].map(({label, link}) => (
+            {[
+              {label: 'Blog', link: "/blog"},
+              {label: 'Documentation', link: "docs.basedollar.org"},
+              {label: 'Dune Analytics', link: "https://dune.com/niftyteam/basedollar"}
+            ].map(({label, link}) => (
               <li key={label}>
                 <a
                   href={link}
@@ -140,7 +144,7 @@ const Footer: React.FC = () => {
             margin: '0 auto',
             padding: '20px 40px',
             display: 'flex',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             alignItems: 'center',
             flexWrap: 'wrap',
             gap: 12,
@@ -154,15 +158,6 @@ const Footer: React.FC = () => {
             }}
           >
             © 2026 Base Dollar
-          </span>
-          <span
-            style={{
-              color: '#f3f3e5',
-              fontSize: 13,
-              opacity: 0.7,
-            }}
-          >
-            Designed by louchi.eth
           </span>
         </div>
       </div>
