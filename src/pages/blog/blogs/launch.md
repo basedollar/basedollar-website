@@ -1,6 +1,6 @@
 ---
 title: Base Dollar is Live
-date: 2026-08-11
+date: 2026-08-20
 author: Base Dollar contributors
 image: /blog/images/bd_cover_og.jpg
 ---

@@ -70,7 +70,8 @@ const Footer: React.FC = () => {
           >
             {[
               {label: 'Blog', link: "/blog"},
-              {label: 'Documentation', link: "docs.basedollar.org"}
+              {label: 'Documentation', link: "docs.basedollar.org"},
+              {label: 'Dune Analytics', link: "https://dune.com/niftyteam/basedollar"}
             ].map(({label, link}) => (
               <li key={label}>
                 <a
