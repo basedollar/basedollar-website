@@ -1,5 +1,13 @@
 import React from 'react';
 
+const officialLinks: { label: string; link: string; icon?: string }[] = [
+  { label: 'Blog', link: '/blog' },
+  { label: 'Documentation', link: 'https://docs.basedollar.org' },
+  { label: 'Dune Analytics', link: 'https://dune.com/niftyteam/basedollar' },
+  { label: 'Telegram Announcements', link: 'https://t.me/+gunAo91WJLs4Y2U5' },
+  { label: 'GitHub', link: 'https://github.com/basedollar/', icon: '/images/github-icon.svg' },
+];
+
 const Footer: React.FC = () => {
   return (
     <footer
@@ -68,16 +76,15 @@ const Footer: React.FC = () => {
               gap: 12,
             }}
           >
-            {[
-              {label: 'Blog', link: "/blog"},
-              {label: 'Documentation', link: "https://docs.basedollar.org"},
-              {label: 'Dune Analytics', link: "https://dune.com/niftyteam/basedollar"}
-            ].map(({label, link}) => (
+            {officialLinks.map(({ label, link, icon }) => (
               <li key={label}>
                 <a
                   href={link}
                   style={{
                     color: '#f3f3e5',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
                     textDecoration: 'none',
                     fontSize: 15,
                     opacity: 0.85,
@@ -90,6 +97,7 @@ const Footer: React.FC = () => {
                     (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85';
                   }}
                 >
+                  {icon && <img src={icon} alt="" aria-hidden="true" style={{ width: 18, height: 18 }} />}
                   {label}
                 </a>
               </li>
